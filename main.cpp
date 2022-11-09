@@ -6,6 +6,11 @@
 // Abstratc factory pattern
 #include "factory/AbstractFactory/IFactory.h"
 #endif
+#ifdef _SINGLETON
+#include "Singleton/singleton_hungry.h"
+#include "Singleton/singleton_lazy.h"
+#include <iostream>
+#endif
 int main() {
 #ifdef _FACTORY
     // simple factory
@@ -42,6 +47,14 @@ int main() {
     delete pearlIFactory;
     delete apple;
     delete pearl;
+#endif
+#ifdef _SINGLETON
+    std ::cout << "this is singletone:" << std::endl;
+    //hungery mode
+    Manager* instance = Manager::instance;
+    // lazy mode
+    LazyManager *lazyInstance = LazyManager::getInstance();
+    std::cout << "end of singleton"<< std::endl;
 #endif
     return 0;
 }
