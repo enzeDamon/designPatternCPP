@@ -1,3 +1,4 @@
+#include <iostream>
 #ifdef _FACTORY
 #include "factory/SimpleFactory/FruitFactory.h" // simple factory
 // factory pattern
@@ -9,7 +10,10 @@
 #ifdef _SINGLETON
 #include "Singleton/singleton_hungry.h"
 #include "Singleton/singleton_lazy.h"
-#include <iostream>
+
+#endif
+#ifdef _BUILDER
+#include "BuilderPattern/builder.h"
 #endif
 int main() {
 #ifdef _FACTORY
@@ -55,6 +59,12 @@ int main() {
     // lazy mode
     LazyManager *lazyInstance = LazyManager::getInstance();
     std::cout << "end of singleton"<< std::endl;
+#endif
+#ifdef _BUILDER
+    std ::cout << "this is builder:" << std::endl;
+    Builder *builder = new Builder();
+    Drink *drink = builder->icyed(true)->sugared(7)->watered(3)->build();
+    std ::cout << "this is builder end" << std::endl;
 #endif
     return 0;
 }
