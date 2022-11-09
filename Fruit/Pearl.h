@@ -1,4 +1,7 @@
+#ifndef _Pearl
+#define _Pearl
 #include "Fruit.h"
+
 class Pearl:Fruit
 {
 private:
@@ -20,3 +23,4 @@ Pearl::~Pearl()
 void Pearl::eat(){
     std ::cout <<"this is a pearl"<< std::endl;
 }
+#endif

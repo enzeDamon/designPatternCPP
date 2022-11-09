@@ -1,3 +1,5 @@
+#ifndef _APPLE
+#define _APPLE
 #include "Fruit.h"
 class Apple : Fruit
 {
@@ -21,3 +23,4 @@ Apple::~Apple()
 void Apple::eat(){
     std ::cout <<"this is an apple"<< std::endl;
 }
+#endif
