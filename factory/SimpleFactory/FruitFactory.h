@@ -1,5 +1,5 @@
-#include "Apple.h"
-#include "Pearl.h"
+#include "../../Fruit/Pearl.h"
+#include "../../Fruit/Apple.h"
 
 class FruitFactory
 {
